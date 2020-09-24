@@ -1,0 +1,1 @@
+监控访问端点：${host}:${port}/actuator/prometheus
