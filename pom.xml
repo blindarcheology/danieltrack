@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.version>2.5.1</maven.compiler.version>
         <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+        <oshi.core.version>5.2.5</oshi.core.version>
     </properties>
 
     <dependencyManagement>
@@ -48,11 +49,10 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.oshi/oshi-core -->
         <dependency>
             <groupId>com.github.oshi</groupId>
             <artifactId>oshi-core</artifactId>
-            <version>5.2.5</version>
+            <version>${oshi.core.version}</version>
         </dependency>
     </dependencies>
 

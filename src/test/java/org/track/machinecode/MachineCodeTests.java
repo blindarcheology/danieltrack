@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.track.DanielTrackApplicationTests;
 import oshi.SystemInfo;
 import oshi.hardware.ComputerSystem;
+import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.software.os.OperatingSystem;
 
@@ -26,6 +27,14 @@ public class MachineCodeTests extends DanielTrackApplicationTests {
 
         Assert.assertEquals("Apple",vendor);
         LOGGER.info("processor serial number is:{}",processorSerialNumber);
+    }
+
+    @Test
+    public void testMachineInfo(){
+        SystemInfo systemInfo = new SystemInfo();
+        HardwareAbstractionLayer hardwareAbstractionLayer = systemInfo.getHardware();
+        GlobalMemory memory = hardwareAbstractionLayer.getMemory();
+        LOGGER.info("os total memeory is:{}",memory.getTotal());
     }
 
 }
