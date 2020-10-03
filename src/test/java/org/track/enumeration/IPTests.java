@@ -11,7 +11,7 @@ public class IPTests extends DanielTrackApplicationTests {
     public void testIp() {
         String netWorkInterfaceName = "en0";
         String ip = IpUtils.getIp(netWorkInterfaceName);
-        Assert.assertEquals("127.0.0.1",ip);
+        Assert.assertEquals("127.0.0.1", ip);
     }
 
 }

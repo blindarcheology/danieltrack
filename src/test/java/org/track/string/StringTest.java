@@ -7,21 +7,27 @@ import org.track.DanielTrackApplicationTests;
 
 public class StringTest extends DanielTrackApplicationTests {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(StringTest.class);
+    public static final Logger logger = LoggerFactory.getLogger(StringTest.class);
 
     @Test
     public void testStringJoin() {
         String s = new String("string is");
         String join = String.join("-", s, "test", "not null");
-        LOGGER.info("string join result is:{}",join);
+        logger.info("string join result is:{}", join);
     }
 
     @Test
     public void testStringFormat(){
         String s = String.format("%032d", 1);
-        LOGGER.info("string format is:{}",s);
+        logger.info("string format is:{}", s);
     }
 
+    @Test
+    public void testFormatFlag(){
+        final String KEY_PERFIX = "long_%s_%s_user";
+        String key = String.format(KEY_PERFIX, "biz_id_123", "biz_token_123");
+        logger.info("key is {}", key);
+    }
 
 
 }

@@ -25,8 +25,8 @@ public class MachineCodeTests extends DanielTrackApplicationTests {
         String vendor = operatingSystem.getManufacturer();
         String processorSerialNumber = computerSystem.getSerialNumber();
 
-        Assert.assertEquals("Apple",vendor);
-        LOGGER.info("processor serial number is:{}",processorSerialNumber);
+        Assert.assertEquals("Apple", vendor);
+        LOGGER.info("processor serial number is:{}", processorSerialNumber);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class MachineCodeTests extends DanielTrackApplicationTests {
         SystemInfo systemInfo = new SystemInfo();
         HardwareAbstractionLayer hardwareAbstractionLayer = systemInfo.getHardware();
         GlobalMemory memory = hardwareAbstractionLayer.getMemory();
-        LOGGER.info("os total memeory is:{}",memory.getTotal());
+        LOGGER.info("os total memeory is:{}", memory.getTotal());
     }
 
 }

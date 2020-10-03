@@ -25,6 +25,28 @@ public class EnumerationTests extends DanielTrackApplicationTests {
         Assert.assertTrue(true);
     }
 
+    @Test
+    public void testEnumerationCore() {
+        String[] values = {"a","b","c","d"};
+        Enumeration enumeration = new Enumeration() {
+            int poi = 0;
+            @Override
+            public boolean hasMoreElements() {
+                return poi < values.length;
+            }
+            @Override
+            public Object nextElement() {
+                return values[poi++];
+            }
+        };
+        StringBuilder sb = new StringBuilder(values.length);
+        while (enumeration.hasMoreElements()) {
+            String o = (String)enumeration.nextElement();
+            sb.append(o);
+        }
+        logger.info("values is:{}",sb.toString());
+    }
+
     private Enumeration<InetAddress> getInetAddresses() {
 
         class checkedAddresses implements Enumeration<InetAddress> {

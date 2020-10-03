@@ -7,9 +7,9 @@ import org.track.DanielTrackApplicationTests;
 public class JunitTests extends DanielTrackApplicationTests {
 
     @Test
-    public void testUnit(){
+    public void testUnit() {
         long v = 1L;
-        Assert.assertEquals(1,v);
+        Assert.assertEquals(1, v);
     }
 
 }
