@@ -12,8 +12,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * @Descriptor ip toolKit
  * @author blindarcheology@hotmail.com
+ * @Descriptor ip toolKit
  * @time 2020/10/2 13:54:50
  */
 public class IpUtils {
@@ -24,14 +24,15 @@ public class IpUtils {
      * Obtain the ip address according to the system network interface.
      * If the network interface <code>networkInterfaceName</code> is not empty, get the specified network interface ip,
      * Otherwise,obtain the ip address according to system all network interface.
+     *
      * @param networkInterfaceName system network interface name
      * @return destination ip
      */
-    public static String getIp(String networkInterfaceName){
+    public static String getIp(String networkInterfaceName) {
         String ip;
         try {
             List<String> hosts = getHost(networkInterfaceName);
-            ip = (!hosts.isEmpty()) ? hosts.get(0) : "";
+            ip = hosts.isEmpty() ? "" : hosts.get(0);
         } catch (Exception e) {
             ip = "";
             logger.warn("get ip is warn", e);
@@ -41,6 +42,7 @@ public class IpUtils {
 
     /**
      * Obtain the ip address according to the system network interface
+     *
      * @param networkInterfaceName
      * @return destination host address
      * @throws SocketException the exception that is thrown when a socket error occurs
@@ -48,7 +50,7 @@ public class IpUtils {
     private static List<String> getHost(String networkInterfaceName) throws SocketException {
         List<String> ipList = new ArrayList<>(5);
         Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
-        while(networkInterfaces.hasMoreElements()) {
+        while (networkInterfaces.hasMoreElements()) {
             NetworkInterface networkInterface = networkInterfaces.nextElement();
             Enumeration<InetAddress> inetAddresses = networkInterface.getInetAddresses();
             while (inetAddresses.hasMoreElements()) {
@@ -59,7 +61,7 @@ public class IpUtils {
                 String hostAddress = inetAddress.getHostAddress();
                 if (null == networkInterfaceName) {
                     ipList.add(hostAddress);
-                }else if (networkInterfaceName.equals(networkInterface.getDisplayName())){
+                } else if (networkInterfaceName.equals(networkInterface.getDisplayName())) {
                     ipList.add(hostAddress);
                 }
             }
