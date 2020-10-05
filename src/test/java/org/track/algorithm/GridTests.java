@@ -7,13 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @ClassName GridTests
- * @Description TODO
- * @Author lee
- * @Date 2020/10/6 上午12:26
- * @Version 1.0
- **/
 public class GridTests extends DanielTrackApplicationTests {
 
     private static final long MAX_NUM = 1000000000L;
