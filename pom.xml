@@ -14,6 +14,7 @@
         <maven.compiler.version>2.5.1</maven.compiler.version>
         <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
         <oshi.core.version>5.2.5</oshi.core.version>
+        <javassist.version>3.12.1.GA</javassist.version>
     </properties>
 
     <dependencyManagement>
@@ -54,6 +55,12 @@
             <artifactId>oshi-core</artifactId>
             <version>${oshi.core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>${javassist.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
