@@ -19,7 +19,7 @@ import org.track.DanielTrackApplicationTests;
  **/
 public class ByteBuddytTests extends DanielTrackApplicationTests {
 
-    public static final Logger loggger = LoggerFactory.getLogger(ByteBuddytTests.class);
+    public static final Logger logger = LoggerFactory.getLogger(ByteBuddytTests.class);
 
     @Test
     public void create() throws IllegalAccessException, InstantiationException {
