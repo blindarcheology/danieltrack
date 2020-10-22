@@ -14,7 +14,7 @@ public class OptionalTests extends DanielTrackApplicationTests {
 
     @Test
     public void testOptional() {
-        Optional<User> user = Optional.ofNullable(new User());
+        Optional<User> user = Optional.of(new User());
         User o = user.get();
         logger.info("user is:{}", o);
 
