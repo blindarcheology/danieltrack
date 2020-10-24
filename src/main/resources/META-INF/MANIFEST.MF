@@ -1,0 +1,6 @@
+Manifest-Version: 1.0.0
+Premain-Class: org.track.core.common.agent.PreMainTraceAgent
+Agent-Class: org.track.core.common.agent.AgentMain
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Created-By: Apache Maven 3.6.3
